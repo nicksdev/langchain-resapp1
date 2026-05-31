@@ -3,3 +3,4 @@ uvicorn
 langchain
 langchain-openai
 openai
+boto3=1.34.*
