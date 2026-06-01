@@ -3,7 +3,16 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 import os
 
-print (os.getenv("API_KEY"))
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # tighten later
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 api_key = os.getenv("API_KEY")
 
 
