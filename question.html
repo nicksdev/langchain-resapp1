@@ -15,13 +15,9 @@
     async function send() {
       const message = document.getElementById("msg").value;
 
-//     const res = await fetch("http://3.107.196.197:8080/ask", {
-      const res = await fetch("http://127.0.0.1:8000/ask", {  
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message })
+     const res = await fetch(`http://3.107.196.197:8080/ask?q=${encodeURIComponent(message)}`, {
+//      const res = await fetch(`http://127.0.0.1:8000/ask?q=${encodeURIComponent(message)}`, {
+        method: "GET"
       });
 
       const data = await res.json();
